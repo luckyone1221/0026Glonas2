@@ -3,6 +3,20 @@ extends layout/main.pug
 
 include ../blocks/sContent/_sContent.pug
 include ../blocks/sContact/_sContact.pug 
+include ../blocks/sTestDrive/_sTestDrive.pug 
+include ../blocks/sLogo/_sLogo.pug 
+include ../blocks/sGift/_sGift.pug 
+include ../blocks/sAbout/_sAbout.pug 
+include ../blocks/sMonitoring/_sMonitoring.pug 
+include ../blocks/sGaranty/_sGaranty.pug 
+include ../blocks/sCatalog/_sCatalog.pug 
+include ../blocks/sServises/_sServises.pug 
+include ../blocks/sGet/_sGet.pug 
+include ../blocks/sControl/_sControl.pug 
+include ../blocks/sExample/_sExample.pug 
+include ../blocks/sSert/_sSert.pug 
+include ../blocks/sWork/_sWork.pug 
+include ../blocks/sStart/_sStart.pug 
 
 block variables
 	- let  mainPage= null
@@ -12,11 +26,24 @@ block title
 block pagecontent 
 	//- +mob-mnu()
 	+header()
-
-		+top-nav()
 		+topLine()  
+
 	+headerBlock()
+	+sTestDrive
+	+sLogo
+	+sGift
+	+sAbout
+	+sMonitoring
+	+sGaranty
+	+sCatalog
+	+sServises
+	+sGet
+	+sControl
+	+sExample
+	+sSert
+	+sWork
+	+sStart
 	+sForm()
-	+sContact()
 	+footer()
+		+topLine('img/@2x/logo-white.png')
 	

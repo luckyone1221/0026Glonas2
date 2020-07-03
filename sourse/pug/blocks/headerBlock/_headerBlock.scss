@@ -3,6 +3,9 @@
 	margin-bottom: 1px;
 	min-height: 100vh;
 	min-height: calc(var(--vh, 1vh) * 100);
+	padding-top: rem(40);
+	padding-bottom: rem(60);
+
 	// background-image: url(../img);
 	// background-color: #000000;
 
@@ -10,8 +13,20 @@
 		margin-bottom: 1px;
 	}
 
-	h2 {
-		margin-bottom: 1px;
+	 &__block{
+		 border: 2px solid rgba($color: $primary, $alpha: .73);
+		 background-color: rgba($color: #fff, $alpha: .73);
+		//  opacity: 0.73;
+		 max-width: rem(616);
+		 padding: rem(64);
+		 border-radius: 10px;
+	 }
+	li{
+		list-style: none;
+		img{
+			max-width: rem(74);
+			max-height: rem(58);
+		}
 	}
 
 	@include media-breakpoint-up(xl) {}

@@ -1,6 +1,11 @@
 .footer {
-		
-
+		background-color: $dark;
+		.topLine{
+			color: #ffffff;
+		}
+		.text-secondary{
+			color: #ffffff !important;
+		}
 
 // 
 @include media-breakpoint-up(xl) {}
