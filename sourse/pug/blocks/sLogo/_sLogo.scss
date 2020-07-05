@@ -1,7 +1,7 @@
 
 	// start .sLogo
 	.sLogo {
-		 
+		 background-color: $light;
 	@include media-breakpoint-up(xl) {}
 	@include media-breakpoint-up(lg) {}
 	@include media-breakpoint-up(md) {}

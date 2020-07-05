@@ -1,19 +1,20 @@
 mixin headerBlock()
 	// start headerBlock
 	+b.headerBlock.bg-wrap#headerBlock&attributes(attributes)
-		+pic("head-bg")(class="picture-bg")
+		+pic("head-bg",'bg')(class="picture-bg")
 		.container
 			+e.block
 				h1 Мониторинг Транспорта GPS/ГЛОНАСС
 				ul
 					li 
-						img(src="img/station.svg", alt="") 
+						+e.icon-wrap: img(src="img/station.svg", alt="") 
 						| Контроль расхода топлива 
 					li 
-						img(src="img/road.svg", alt="") 
+						+e.icon-wrap: img(src="img/road.svg", alt="") 
 						| Отслеживание движения транспорта
 					li 
-						img(src="img/cars.svg", alt="") 
+						+e.icon-wrap: img(src="img/cars.svg", alt="") 
 						| Снижение затрат на содержание парка
+				+e.btn(href="#") Запросить консультацию
 
 	// end headerBlock

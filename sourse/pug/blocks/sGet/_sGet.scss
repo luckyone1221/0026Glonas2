@@ -1,6 +1,33 @@
 
 	// start .sGet
 	.sGet {
+		text-align: center;
+		.container{
+			border-bottom: 2px solid $primary;
+			padding-bottom: 0;
+		}
+		&__item{
+			margin-bottom: rem(60);
+			@extend .h5;
+			font-weight: normal;
+			color: $secondary;
+			max-width: rem(360);
+			margin-left: auto;
+			margin-right: auto;
+		}
+		&__icon-wrap{
+		 height: rem(80);
+		 margin-bottom: rem(30);
+			.img-svg {
+				max-width: 100%;
+				max-height: 100%;
+				max-width: rem(110);
+				max-height: rem(80);
+					fill: $primary !important;
+					margin-left: auto;
+					margin-right: auto;
+			}
+		}
 		 
 	@include media-breakpoint-up(xl) {}
 	@include media-breakpoint-up(lg) {}

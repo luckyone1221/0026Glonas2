@@ -1,6 +1,66 @@
 
 	// start .sTestDrive
 	.sTestDrive {
+		background-color: rgba($color: $light, $alpha: .5);
+		&__item{
+			margin-left: auto;
+			margin-right: auto;
+			max-width: rem(470) ;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			border: 2px solid $primary;
+			background-color: #ffffff;
+			// font-size: $h4-font-size;
+			@extend .h4;
+			margin-bottom: 0;
+			font-weight: 600;
+			border-radius: rem(10);
+			min-height: 100%;
+			line-height: 1;
+			padding: rem(2) rem(5);
+			*{
+				padding-left: rem(5);
+				padding-right: rem(5);
+			}
+		}
+		&__primary{
+			font-weight: 600;
+			@include rfs(rem(25));
+			// font-size: rem(25);
+			text-transform: uppercase;
+			color: $primary;
+		}
+		&__lg{
+			color: $primary;
+			// font-size: rem(80);
+			@include rfs(rem(80));
+		}
+
+		&__col{
+			margin-bottom: 30px;
+		}
+		&__footer{
+			text-align: center;
+		}
+		&__title{
+			@extend .h2;
+			color: $primary; 
+			font-weight: bold;
+			text-transform: uppercase;
+		}
+		.h6{
+			margin-bottom: rem(20);
+			font-weight: normal;
+		}
+		&__btn{
+			@extend .btn;
+			@extend .btn-block;
+			@extend .btn-primary;
+			max-width: rem(340);
+			margin-left: auto;
+			margin-right: auto;
+		}
 		 
 	@include media-breakpoint-up(xl) {}
 	@include media-breakpoint-up(lg) {}

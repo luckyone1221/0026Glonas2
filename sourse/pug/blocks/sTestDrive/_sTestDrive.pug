@@ -1,9 +1,21 @@
 mixin sTestDrive()
 	// start sTestDrive
-	+b.SECTION.sTestDrive.section#sTestDrive&attributes(attributes)
-		.container
-			+b.section-title.text-center
-				h2 sTestDrive
-				
+	+b.sTestDrive.section#sTestDrive&attributes(attributes)
+		.container 
 			.row
+				+e.col.col-md-6
+					+e.item
+						+e.primary до
+						+e.lg 30%
+						+e.text сокращение затрат на&nbsp;топливо
+						
+				+e.col.col-md-6
+					+e.item
+						+e.lg  60 
+						+e.primary  дней
+						+e.text окупаемость  затрат на&nbsp;мониторинг
+			+e.footer
+				+e.title не верите?* тогда предлагаем наш тест-драйв
+				.h6 *От&nbsp;5&nbsp;машин. Будьте аккуратны, возможно увольнение сотрудников в&nbsp;связи с&nbsp;перекрытием хищений
+				+e.btn(href="#") Получить консультацию
 	// end sTestDrive

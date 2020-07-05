@@ -1,9 +1,22 @@
 mixin sGet()
 	// start sGet
-	+b.SECTION.sGet.section#sGet&attributes(attributes)
-		.container
+	+b.SECTION.sGet#sGet&attributes(attributes)
+		.container.section
 			+b.section-title.text-center
-				h2 sGet
+				h2 Что вы&nbsp;получаете при мониторинге транспортного средства:
 				
 			.row
+				mixin item(i,t)
+					+e.col.col-lg-4.col-sm-6
+						+e.item
+							+e.icon-wrap
+								img.img-svg(src=`img/${i}`, alt="")
+							+e.title!= t
+						 
+				+item(`station.svg`,`Контроль топлива: заправки, сливы,&nbsp;расход`)
+				+item(`control.svg`,`Контроль на&nbsp;маршруте: Передвижение&nbsp;/ Скорость/ Киллометраж/ Состояние зажигания и&nbsp;учет моточасов`)
+				+item(`about-2.svg`,`Слежение за&nbsp;транспортом в&nbsp;режиме ON-Line и&nbsp;ведение архива до&nbsp;2&nbsp;лет`)
+				+item(`check.svg`,`Установка оборудования согласно ФЗ&nbsp;153&nbsp;в случае необходимости. Соответствие требованиям законодательства&nbsp;РФ`)
+				+item(`search.svg`,`Отслеживание местоположения транспорта в&nbsp;online режиме`)
+				+item(`comp-lock.svg`,`Дистанционная блокировка транспортного средства при необходимости`)
 	// end sGet

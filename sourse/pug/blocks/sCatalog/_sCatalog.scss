@@ -1,7 +1,69 @@
 
 	// start .sCatalog
 	.sCatalog {
-		 
+		&__col{
+			margin-bottom: 30px;
+		}
+		&__item{
+			box-shadow: -1px -5px 5px rgba(0, 0, 0, 0.07);
+			border: 2px solid #dadada;
+			background-color: #ffffff;
+			border-radius: 10px;
+			min-height: 100%;
+			padding: rem(30) rem(20) rem(20);
+			display: flex;
+			flex-direction: column;
+			margin-left: auto;
+			margin-right: auto;
+			max-width: rem(400);
+		}
+		 &__title{
+			 color: $secondary;
+			 @extend .h5;
+			 text-align: center;
+			 line-height: 1;
+			 flex-grow: 1;
+			 span{
+				 font-size: rem(14);
+			 }
+		 }
+		 picture{
+			 border-bottom: 1px solid #e1e1e1;
+			 height: rem(194);
+			 display: flex;
+			 justify-content: center;
+			 align-items: center;
+			 img{
+				 flex: 0 0 auto;
+				 max-height: 100%;
+			 }
+		 }
+		 &__price{
+			 text-align: center;
+			 @include rfs(rem(20));
+			 font-weight: bold;
+			}
+			table{
+				.text-primary{
+					
+					font-weight: bold;
+					@include rfs(rem(20));
+			 }
+		 }
+		 .small{
+			 text-align: center;
+		 }
+		 &__foot{
+			 min-height: rem(84);
+			 display: flex;
+			 flex-direction: column;
+			 justify-content: center;
+			 align-items: center;
+		 }
+
+		 &__row{
+			 justify-content: center;
+		 }
 	@include media-breakpoint-up(xl) {}
 	@include media-breakpoint-up(lg) {}
 	@include media-breakpoint-up(md) {}

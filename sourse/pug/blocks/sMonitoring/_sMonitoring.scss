@@ -1,7 +1,66 @@
 
 	// start .sMonitoring
 	.sMonitoring {
-		 
+		 background-color: rgba($color: #d7d7d7, $alpha: .5);
+		 .row{
+			 position: relative;
+			 justify-content: space-between;
+
+		 }
+		 &__col{
+			 	 @include media-breakpoint-up(md){
+
+						max-width: rem(300);
+					}
+			}
+			img{
+				@extend .res-i;
+				width:  initial;
+			 @include media-breakpoint-up(xl) {
+				 
+				 max-width: (100% - #{rem(700)});
+				}
+				
+				// max-width: (100% - #{rem(700)});
+				@include media-breakpoint-up(xl) {
+
+					@include a-cent(x);
+					top: 0;
+					margin-bottom: 0;
+				}
+				margin-bottom: 30px;
+		 }
+		 &__col{
+			 	@include media-breakpoint-up(xl){
+
+					 margin-bottom: 0;
+					 &:nth-child(1),
+					 &:nth-child(3){
+						 margin-bottom: rem(155);
+						 
+						}
+					}
+					margin-bottom: 20px;
+		 }
+
+		 &__title{
+			 @extend .h2;
+			 font-weight: bold;
+			 line-height: 1.2;
+			 color: $primary; 
+			 font-weight: bold;
+			 text-transform: uppercase;
+			 max-width: rem(280);
+			 span{
+				 font-size: .8em;
+			 }
+		 }
+		 p{
+			 @extend .h5;
+			 color: $secondary;
+			 font-weight: normal;
+		 }
+		//  opacity: 0.5;
 	@include media-breakpoint-up(xl) {}
 	@include media-breakpoint-up(lg) {}
 	@include media-breakpoint-up(md) {}
@@ -24,6 +83,12 @@
 	@include media-breakpoint-down(lg) {}
 	@include media-breakpoint-down(md) {}
 	@include media-breakpoint-down(sm) {}
-	@include media-breakpoint-down(xs) {} 
+	@include media-breakpoint-down(xs) {
+		text-align: center;
+		&__title{
+			margin-left: auto;
+			margin-right: auto;
+		}
+	} 
 
 } // end.sMonitoring

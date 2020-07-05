@@ -3,7 +3,42 @@ mixin sCatalog()
 	+b.SECTION.sCatalog.section#sCatalog&attributes(attributes)
 		.container
 			+b.section-title.text-center
-				h2 sCatalog
+				h2 Оборудование GPS/ГЛОНАСС
 				
-			.row
+			+e.row.row
+				mixin item(i,t,pr, sm )
+					+e.col.col-xl-3.col-lg-4.col-sm-6
+						+e.item
+							+e.title!= t
+							+pic(`prod-${i}.png`,'','',0)
+							+e.foot
+								if pr
+									+e.price Цена: 
+										|
+										span.text-primary= pr
+								block
+
+								if sm
+									.small!= sm
+					// /+e.col.col-3
+				+item(`1`,`GPS/ГЛОНАСС трекер (постоянный ON-Line контроль)`,`3 800 руб.`)
+				+item(`2`,`Трекер ГЛОНАСС/GPS + встроенный аккумулятор (постоянный ON-Line контроль)`,`4 500 руб.`)
+				+item(`3`,`Датчик уровня топлива цифровой взрывозащищенный`,`6 980 руб.`)
+				+item(`4`,`Дистанционное блокирование автомобиля`,` от 900 руб.`,`(монтаж входит в&nbsp;цену) в&nbsp;зависимости от&nbsp;типа и&nbsp;кол-ва TC`)
+				+item(`5`,`Датчик температуры в&nbsp;рефрижераторе`,`от 3 000 руб.`,`(монтаж входит в&nbsp;цену) в&nbsp;зависимости от&nbsp;типа и&nbsp;кол-ва TC`)
+				+item(`6`,`Блок (кондиционер) питания (опционально по&nbsp;желанию заказчика)`)
+					table
+						tr
+							td От 2-х автомобилей
+							td 
+								span.text-primary 4 300 р.
+							
+						tr
+							td 1 автомобиль
+							td 
+								span.text-primary 4 500 р.
+
+				+item(`7`,`Питание терминала ГЛОНАСС/GPS от&nbsp;прикуривателя`,`1 000 руб.`)
+				+item(`8`,`Тревожная кнопка * <span>Тревожная кнопка может быть настроена на&nbsp;различные события (просто нажатие кнопки,
+покидание (вход) определенной зоны, факт пуска двигателя и&nbsp;прочее)</span>`,`от 500 руб.`) 
 	// end sCatalog

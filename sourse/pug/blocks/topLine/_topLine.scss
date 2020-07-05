@@ -2,15 +2,26 @@
 	// start .topLine
 	.topLine {
 		padding-top: rem(23);
-		padding-bottom: rem(33);
+		padding-bottom: rem(23);
 		color: $secondary;
 		.row{
 			@include roww(rem(40));
+
+			> *{
+				padding-bottom: rem(10);
+			}
 		}
 		a{
 			// color: $secondary;
 		 
 
+		}
+		strong{
+			@include media-breakpoint-up(xxl) {
+
+			}
+			// display: block;
+			display: inline-block;
 		}
 		.row{
 			align-items: center;
@@ -18,7 +29,7 @@
 		.h6{
 			font-weight: normal;
 		}
-		 
+		
 	@include media-breakpoint-up(xl) {}
 	@include media-breakpoint-up(lg) {}
 	@include media-breakpoint-up(md) {}

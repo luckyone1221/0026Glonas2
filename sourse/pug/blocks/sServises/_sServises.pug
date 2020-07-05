@@ -1,9 +1,35 @@
 mixin sServises()
 	// start sServises
-	+b.SECTION.sServises.section#sServises&attributes(attributes)
+	+b.SECTION.sServises.section.text-center#sServises&attributes(attributes)
 		.container
-			+b.section-title.text-center
-				h2 sServises
-				
+			+b.section-title
+				h2 Услуги мониторинга транспорта
+				+e.text МСС ГЛОНАСС предоставляет полный комплекс услуг по&nbsp;внедрению систем контроля транспорта. В&nbsp;комплекс услуг входят следующие направления:
 			.row
+				mixin item(i,t,pr)
+					+e.col.col-xl-3.col-lg-4.col-sm-6
+						+e.item
+							+pic(`servises-${i}.png`,'','',0)
+							+e.title!= t
+							+e.foot
+								if pr
+									+e.price.text-primary= pr
+								block
+				+item(`1`,`Установка трекера GPS/ ГЛОНАСС`,`1 400 руб.`)
+				+item(`2`,`Установка датчика уровня топлива`)
+					+e.price
+						| От 
+						span.text-primary 1 990 руб.
+				+item(`3`,`Переподключение сторонних трекеров GPS/ГЛОНАСС`,``)
+					+e.btn(href="#") Запросить
+				+item(`4`,`Выезд на установку`,`Бесплатно`)
+				+item(`5`,`СМС-Уведомление о&nbsp;событиях в&nbsp;работе автомобиля`,`3 руб./шт.`)
+				+item(`6`,`Тест-драйв на&nbsp;2&nbsp;недели`,`Бесплатно`)
+				+item(`7`,`Установка дополнительного оборудования`,``)
+					+e.btn(href="#") Запросить
+				+item(`8`,`Абонентская плата`,``)
+					+e.price
+						| От 
+						span.text-primary 375 руб.
+			+e.btn-primary(href="#") Получить скидку
 	// end sServises

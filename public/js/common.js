@@ -1,17 +1,7 @@
 "use strict";
 
-function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
-
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
 var $ = jQuery;
 var JSCCommon = {
-	// часть вызов скриптов здесь, для использования при AJAX
-	btnToggleMenuMobile: [].slice.call(document.querySelectorAll(".toggle-menu-mobile--js")),
-	menuMobile: document.querySelector(".menu-mobile--js"),
-	menuMobileLink: [].slice.call(document.querySelectorAll(".menu-mobile--js ul li a")),
 	body: document.querySelector("body"),
 	modalCall: function modalCall() {
 		$(".link-modal").fancybox({
@@ -24,14 +14,7 @@ var JSCCommon = {
 				en: {
 					CLOSE: "Закрыть",
 					NEXT: "Вперед",
-					PREV: "Назад" // PLAY_START: "Start slideshow",
-					// PLAY_STOP: "Pause slideshow",
-					// FULL_SCREEN: "Full screen",
-					// THUMBS: "Thumbnails",
-					// DOWNLOAD: "Download",
-					// SHARE: "Share",
-					// ZOOM: "Zoom"
-
+					PREV: "Назад"
 				}
 			}
 		});
@@ -39,199 +22,34 @@ var JSCCommon = {
 			$.fancybox.close();
 		});
 		$.fancybox.defaults.backFocus = false;
-	},
-	// /magnificPopupCall
-	toggleMenu: function toggleMenu() {
-		var _this = this;
-
-		if (_this.btnToggleMenuMobile) {
-			_this.btnToggleMenuMobile.forEach(function (element) {
-				element.addEventListener('click', function () {
-					_this.btnToggleMenuMobile.forEach(function (element) {
-						element.classList.toggle("on");
-					});
-
-					_this.menuMobile.classList.toggle("active");
-
-					_this.body.classList.toggle("fixed");
-
-					return false;
-				});
-			});
-		}
-	},
-	closeMenu: function closeMenu() {
-		var _this = this;
-
-		if (_this.menuMobile) {
-			_this.btnToggleMenuMobile.forEach(function (element) {
-				element.classList.remove("on");
-			});
-
-			_this.menuMobile.classList.remove("active");
-
-			_this.body.classList.remove("fixed");
-		}
-	},
-	mobileMenu: function mobileMenu() {
-		// закрыть/открыть мобильное меню
-		var _this = this;
-
-		if (_this.menuMobileLink) {
-			_this.toggleMenu(); // _this.menuMobileLink.forEach(function (element) {
-			// 	element.addEventListener('click', function (e) {
-			// 		console.log(element);
-			// 		_this.closeMenu();
-			// 	});
-			// })
-
-
-			document.addEventListener('mouseup', function (event) {
-				var container = event.target.closest(".menu-mobile--js.active"); // (1)
-
-				if (!container) {
-					_this.closeMenu();
-				}
-			});
-		}
-	},
-	// /mobileMenu
-	// табы  . 
-	tabscostume: function tabscostume(tab) {
-		$('.' + tab + '__caption').on('click', '.' + tab + '__btn:not(.active)', function (e) {
-			$(this).addClass('active').siblings().removeClass('active').closest('.' + tab).find('.' + tab + '__content').hide().removeClass('active').eq($(this).index()).show().addClass('active');
-		});
-	},
-	// /табы  
-	inputMask: function inputMask() {
-		// mask for input
-		$('input[type="tel"]').attr("pattern", "[+][0-9]{1}[(][0-9]{3}[)][0-9]{3}-[0-9]{2}-[0-9]{2}").inputmask("+9(999)999-99-99");
-	} // /inputMask
-
+	}
 };
 
 function eventHandler() {
-	var _objectSpread2;
+	JSCCommon.modalCall(); //Replace all SVG images with inline SVG
 
-	JSCCommon.modalCall();
-	JSCCommon.tabscostume('tabs');
-	JSCCommon.mobileMenu();
-	JSCCommon.inputMask(); // JSCCommon.CustomInputFile();
-	// добавляет подложку для pixel perfect
+	$('img.img-svg ').each(function () {
+		var $img = $(this);
+		var imgClass = $img.attr('class');
+		var imgURL = $img.attr('src');
+		$.get(imgURL, function (data) {
+			// Get the SVG tag, ignore the rest
+			var $svg = $(data).find('svg'); // Add replaced image's classes to the new SVG
 
-	$(".main-wrapper").after('<div class="pixel-perfect" style="background-image: url(screen/main.jpg);"></div>'); // /добавляет подложку для pixel perfect
-	// const url = document.location.href;
-	// $.each($(".top-nav__nav a "), function() {
-	// 	if (this.href == url) {
-	// 		if ($(this).hasClass("top-nav__link") == true) {
-	// 			$(this).addClass('top-nav__link-active');
-	// 		}
-	// 		if ($(this).hasClass("footer__link") == true) {
-	// 			$(this).addClass('footer__link-active');
-	// 		} 
-	// 	}; 
-	// }); 
-	// /закрыть/открыть мобильное меню
-
-	function heightses() {
-		// скрывает моб меню
-		var topH = document.querySelector('header').scrollHeight;
-		var stickyElement = document.querySelector('.top-nav');
-
-		window.onscroll = function () {
-			if ($(window).scrollTop() > topH) {
-				stickyElement.classList.add('fixed');
-			} else {
-				stickyElement.classList.remove('fixed');
-			}
-		}; // конец добавил
+			if (typeof imgClass !== 'undefined') {
+				$svg = $svg.attr('class', imgClass + ' replaced-svg');
+			} // Remove any invalid XML tags as per http://validator.w3.org
 
 
-		if (window.matchMedia("(min-width: 992px)").matches) {
-			JSCCommon.closeMenu();
-		}
-	}
+			$svg = $svg.removeAttr('xmlns:a'); // Check if the viewport is set, if the viewport is not set the SVG wont't scale.
 
-	window.addEventListener('resize', function () {
-		heightses();
-	});
-	heightses(); // листалка по стр
-
-	$(" .top-nav li a, .scroll-link").click(function () {
-		var elementClick = $(this).attr("href");
-		var destination = $(elementClick).offset().top;
-		$('html, body').animate({
-			scrollTop: destination
-		}, 1100);
-		return false;
-	});
-	var defaultSl = {};
-	var swiper4 = new Swiper('.color-slider', _objectSpread(_objectSpread({}, defaultSl), {}, (_objectSpread2 = {
-		slidesPerView: 'auto',
-		watchOverflow: true,
-		spaceBetween: 0,
-		freeMode: true
-	}, _defineProperty(_objectSpread2, "watchOverflow", true), _defineProperty(_objectSpread2, "slidesPerGroup", 3), _defineProperty(_objectSpread2, "loop", true), _defineProperty(_objectSpread2, "loopFillGroupWithBlank", true), _defineProperty(_objectSpread2, "touchRatio", 0.2), _defineProperty(_objectSpread2, "slideToClickedSlide", true), _defineProperty(_objectSpread2, "freeModeMomentum", true), _defineProperty(_objectSpread2, "navigation", {
-		nextEl: '.swiper-button-next',
-		prevEl: '.swiper-button-prev'
-	}), _objectSpread2))); // modal window
-
-	var gets = function () {
-		var a = window.location.search;
-		var b = new Object();
-		var c;
-		a = a.substring(1).split("&");
-
-		for (var i = 0; i < a.length; i++) {
-			c = a[i].split("=");
-			b[c[0]] = c[1];
-		}
-
-		return b;
-	}(); // form
+			if (!$svg.attr('viewBox') && $svg.attr('height') && $svg.attr('width')) {
+				$svg.attr('viewBox', '0 0 ' + $svg.attr('height') + ' ' + $svg.attr('width'));
+			} // Replace image with new SVG
 
 
-	var gets = function () {
-		var a = window.location.search;
-		var b = new Object();
-		var c;
-		a = a.substring(1).split("&");
-
-		for (var i = 0; i < a.length; i++) {
-			c = a[i].split("=");
-			b[c[0]] = c[1];
-		}
-
-		return b;
-	}(); // form
-
-
-	$("form").submit(function (e) {
-		e.preventDefault();
-		var th = $(this);
-		var data = th.serialize();
-		th.find('.utm_source').val(decodeURIComponent(gets['utm_source'] || ''));
-		th.find('.utm_term').val(decodeURIComponent(gets['utm_term'] || ''));
-		th.find('.utm_medium').val(decodeURIComponent(gets['utm_medium'] || ''));
-		th.find('.utm_campaign').val(decodeURIComponent(gets['utm_campaign'] || ''));
-		$.ajax({
-			url: 'action.php',
-			type: 'POST',
-			data: data
-		}).done(function (data) {
-			$.fancybox.close();
-			$.fancybox.open({
-				src: '#modal-thanks',
-				type: 'inline'
-			}); // window.location.replace("/thanks.html");
-
-			setTimeout(function () {
-				// Done Functions
-				th.trigger("reset"); // $.magnificPopup.close();
-				// ym(53383120, 'reachGoal', 'zakaz');
-				// yaCounter55828534.reachGoal('zakaz');
-			}, 4000);
-		}).fail(function () {});
+			$img.replaceWith($svg);
+		}, 'xml');
 	});
 	var isIE11 = !!window.MSInputMethodContext && !!document.documentMode;
 

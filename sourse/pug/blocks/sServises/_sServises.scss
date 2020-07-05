@@ -1,7 +1,78 @@
 
 	// start .sServises
 	.sServises {
-		 
+		 background-color: $light;
+			.section-title{
+				margin-left: auto;
+				margin-right: auto;
+				max-width: rem(1070);
+			}
+			&__col{
+				margin-bottom: 30px;
+			}
+			.row{
+				justify-content: center;
+			}
+		 &__item{
+			 box-shadow: -1px -5px 5px rgba(0, 0, 0, 0.07);
+			 background-color: #ffffff;
+			 margin-left: auto;
+			 margin-right: auto;
+			 border-radius: 10px;
+			 min-height: 100%;
+			 padding: rem(20);
+			 display: flex;
+			 flex-direction: column;
+			//  justify-content: center;
+			align-items: center;
+		 }
+		 &__title{
+			 @extend .h6;
+			 font-weight: 600;
+			 max-width: rem(216);
+			 margin-left: auto;
+			 margin-right: auto;
+				border-bottom: 1px solid #e1e1e1;
+				padding-bottom: rem(10);
+				flex-grow: 1;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				margin-bottom: 0;
+		 }
+		 picture{
+			 height: rem(90);
+			 line-height: rem(90);
+			vertical-align: middle;
+			margin-bottom: rem(15);
+			img{
+				max-height: 100%;
+			}
+			}
+			&__btn{
+				@extend .btn;
+				@extend .btn-block;
+				@extend .btn-gray;
+				color: #ffffff !important;
+				width: 100%;
+			 width: rem(189);
+			}
+			&__foot{
+				 height: rem(70);
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				flex-direction: column;
+				padding-top: rem(10);
+			}
+
+			&__btn-primary{
+				@extend .btn;
+				@extend .btn-primary;
+				width: 100%;
+				max-width: rem(340);
+			}
+
 	@include media-breakpoint-up(xl) {}
 	@include media-breakpoint-up(lg) {}
 	@include media-breakpoint-up(md) {}

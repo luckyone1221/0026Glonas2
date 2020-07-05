@@ -3,17 +3,17 @@ mixin topLine(i='img/@2x/logo.png')
 	+b.topLine
 		.container
 			.row
-				.col-auto
+				.col-md-auto.col-sm
 					+e.logo(href='/')
-						img(src= i , alt="")
+						img.res-i(src= i , alt="")
 				.col-auto.h6 
 					.strong.text-primary  ЛИЦЕНЗИЯ 
 					| №141602 РОСКОМНАДЗОР
-				.col-auto.h6 
+
+				.col-md.h6 
 					div #[strong.text-primary Время работы:]  Пн-Вс с 09-00 до 21-00
 					div #[strong.text-primary e-mail:] #[a.text-secondary(href="mailto:info@mssglonass.ru") info@mssglonass.ru]
-
-				.col.h6.mb-0.strong
+				.col-auto.h6.mb-0.strong
 					div
 						a(href="tel:8(495)6403978") 8 (495) 640 39 78  
 						span Москва 

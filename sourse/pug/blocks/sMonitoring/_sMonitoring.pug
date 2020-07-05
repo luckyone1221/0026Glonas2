@@ -3,7 +3,20 @@ mixin sMonitoring()
 	+b.SECTION.sMonitoring.section#sMonitoring&attributes(attributes)
 		.container
 			+b.section-title.text-center
-				h2 sMonitoring
+				h2 Мониторинг транспорта от&nbsp;МСС Глонасс
 				
 			.row
+				mixin item(t,p)
+					+e.col.col-md-auto.col-sm-6
+						+e.title!= t
+						p!= p
+				+item(`Современное оборудование`,`Производство и&nbsp;установка навигационного оборудования (терминалы ГЛОНАСС GPS, датчики, реле и&nbsp;др.)`)
+				.col.d-none.d-md-block
+				+item(`<span>Квалифицированные</span> специалисты`,`Мы производим оборудование ГЛОНАСС/GPSболее 12 лет. Все наши сотрудники работают для вас.`)
+				.col-12.text-center
+					img(src="img/@2x/round.png", alt="")
+				+item(`Качественный софт`,`Современный софт. Разработка профессионального ПО. Просто в&nbsp;освоении`)
+				.col.d-none.d-md-block
+				+item(`Обслуживание 24/7`,`Aбонентское и&nbsp;сервисное обслуживание, ремонт и&nbsp;модернизация`)
+				
 	// end sMonitoring

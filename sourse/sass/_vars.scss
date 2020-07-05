@@ -71,10 +71,12 @@ $warning: $yellow !default;
 $danger: $red !default;
 $light: #ebebeb !default;
 $dark: #1f263b !default;
+$gray: #aeb0b9 !default;
 
 // scss-docs-start theme-colors-map
 $theme-colors: ("primary": $primary,
   "secondary": $secondary,
+  "gray": $gray,
   "success": $success,
   "info": $info,
   "warning": $warning,
@@ -108,15 +110,15 @@ $escaped-characters: (("<", "%3c"),
 
 $enable-caret: true !default;
 $enable-rounded: true !default;
-$enable-shadows: false !default;
+$enable-shadows: true !default;
 $enable-gradients: false !default;
-$enable-transitions: false !default;
+$enable-transitions: true !default;
 $enable-reduced-motion: true !default;
 $enable-grid-classes: true !default;
 $enable-button-pointers: true !default;
 $enable-rfs: true !default;
 $enable-validation-icons: true !default;
-$enable-negative-margins: false !default;
+$enable-negative-margins: true !default;
 $enable-deprecation-messages: true !default;
 $enable-important-utilities: true !default;
 
@@ -228,7 +230,7 @@ $container-padding-x: $grid-gutter-width / 2 !default;
 $border-width: 1px !default;
 $border-color: $gray-300 !default;
 
-$border-radius: .25rem !default;
+$border-radius: rem(100)!default;
 $border-radius-sm: .2rem !default;
 $border-radius-lg: .3rem !default;
 
@@ -310,17 +312,17 @@ $line-height-base: 1.5 !default;
 $line-height-sm: 1.25 !default;
 $line-height-lg: 2 !default;
 
-$h1-font-size: $font-size-base * 2.5 !default;
+$h1-font-size: rem(60) !default;
 $h2-font-size: rem(32) !default;
 $h3-font-size: $font-size-base * 1.75 !default;
-$h4-font-size: $font-size-base * 1.5 !default;
-$h5-font-size: rem(24) !default;
+$h4-font-size: rem(24) !default;
+$h5-font-size: rem(22) !default;
 $h6-font-size: rem(18) !default;
 
 $headings-margin-bottom: $spacer / 2 !default;
 $headings-font-family: null !default;
 $headings-font-style: null !default;
-$headings-font-weight: 500 !default;
+$headings-font-weight: 400 !default;
 $headings-line-height: 1.2 !default;
 $headings-color: null !default;
 
@@ -427,10 +429,10 @@ $table-variants: ("primary": color-level($primary, $table-bg-level),
 //
 // Shared variables that are reassigned to `$input-` and `$btn-` specific variables.
 
-$input-btn-padding-y: .375rem !default;
+$input-btn-padding-y: .41rem !default;
 $input-btn-padding-x: .75rem !default;
 $input-btn-font-family: null !default;
-$input-btn-font-size: $font-size-base !default;
+$input-btn-font-size: rem(20) !default;
 $input-btn-line-height: $line-height-base !default;
 
 $input-btn-focus-width: .2rem !default;

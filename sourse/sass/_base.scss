@@ -32,6 +32,14 @@ html {
 
 .section-title { 
 	padding-bottom: var(--sTPB);
+	h2{
+		font-weight: bold;
+	}
+	&__text{
+		@extend .h5;
+		font-weight: normal;
+		color: $secondary;
+	}
 }
 
 body {

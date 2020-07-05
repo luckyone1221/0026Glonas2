@@ -1,6 +1,17 @@
 
 	// start .sControl
 	.sControl {
+		.section-title{
+			img{
+				width: rem(190);
+			}
+			.row{
+				align-items: center;
+			}
+			&__text{
+				margin-bottom: 1em;
+			}
+		}
 		 
 	@include media-breakpoint-up(xl) {}
 	@include media-breakpoint-up(lg) {}

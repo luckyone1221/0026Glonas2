@@ -3,7 +3,18 @@ mixin sAbout()
 	+b.SECTION.sAbout.section#sAbout&attributes(attributes)
 		.container
 			+b.section-title.text-center
-				h2 sAbout
+				h2 О партнерстве с АО ГЛОНАСС
+				+e.text Продажа и&nbsp;монтаж оборудования по&nbsp;153 Постановлению Правительства РФ <br> Идентификация в&nbsp;системе ГАИС &laquo;ЭРА ГЛОНАСС&raquo; <br> Предоставление доступа&nbsp;К наблюдению за&nbsp;транспортом в&nbsp;системе &laquo;ЭРА&raquo;
 				
 			.row
+				mixin item(i,t,p)
+					+e.col.col-xl-3.col-sm-6
+						img.img-svg(src=`img/about-${i}.svg`, alt="")
+						+e.title!= t
+						p!= p
+				+item('1','ОБОРУДОВАНИЕ','Cоответствие техническим требованиям 153 Постановления')
+				+item('2','МОНТАЖ',`Монтаж на&nbsp;автобусы и&nbsp;опасные грузы`)
+				+item('3',`Идентификация  в&nbsp;&laquo;ЭРА ГЛОНАСС&raquo;`,`Регистрация в «ЭРА ГЛОНАСС» под ключ`)
+				+item('4',`Доступ к&nbsp;наблюдению`,`Мониторинг пассажирских перевозок и&nbsp;опасных грузов`)
+			+e.btn(href="#") Получить консультацию
 	// end sAbout

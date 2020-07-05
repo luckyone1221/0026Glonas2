@@ -3,7 +3,14 @@ mixin sControl()
 	+b.SECTION.sControl.section#sControl&attributes(attributes)
 		.container
 			+b.section-title.text-center
-				h2 sControl
-				
-			.row
+				h2 Контроль расхода топлива автомобиля 
+				.row.text-left
+					.col-auto
+						img(src="img/station.svg", alt="")
+					.col
+						+e.text Контролировать топливо возможно несколькими способами, но&nbsp;в&nbsp;каждом из&nbsp;них головным устройством является ГЛОНАСС/GPSтрекер.
+
+						+e.text Наиболее точным методом является использование емкостного датчика уровня топлива (ДУТ).  Метод контроля топлива через CAN-шину стоит использовать, когда нет технической возможности установить ДУТ. Ниже представлена более подробная информация с&nbsp;указанием цен.
+
+
 	// end sControl

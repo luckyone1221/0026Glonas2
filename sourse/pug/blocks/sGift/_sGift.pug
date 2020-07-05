@@ -1,9 +1,23 @@
 mixin sGift()
 	// start sGift
 	+b.SECTION.sGift.section#sGift&attributes(attributes)
-		.container
-			+b.section-title.text-center
-				h2 sGift
-				
+		.container 
 			.row
+				.col-lg-6
+					+e.block--sm
+						+e.title установка  оборудования МСС ГЛОНАСС 
+
+					+e.block--sm
+						+e.title переподключение или установка вашего оборудования
+
+					+e.block--sm
+						+e.title--lg ФЗ 153
+						+e.text установка на&nbsp;пассажирский транспорт  и&nbsp;опасные грузы + идентификация
+
+				.col-lg-6
+					+e.block--lg
+						+e.wrap
+							+e.text-lg Каждый третий
+							+e.title-lg монтаж в&nbsp;подарок
+							+e.btn(href="#") Заказать монтаж
 	// end sGift
