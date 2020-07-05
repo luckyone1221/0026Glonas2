@@ -1,7 +1,167 @@
+// start .sForm
+.sForm {
+	background-color: $light;
 
-	// start .sForm
-	.sForm {
-		 
+	padding: rem(30) 0 rem(30) 0;
+	@include media-breakpoint-up(xl){
+		padding: rem(50) 0 rem(60) 0;
+	}
+
+	.form-wrap{
+		.row{
+			@include media-breakpoint-up(xl){
+				@include roww(60px);
+			}
+		}
+
+		//txt-col
+		&__txt-col{
+			padding-bottom: rem(25);
+			@include media-breakpoint-up(md){
+				padding-bottom: 0;
+			}
+		}
+
+		&__headline{
+			color: $primary;
+			font-weight: 600;
+			text-transform: uppercase;
+
+
+			margin-bottom: rem(10);
+			font-size: rem(28);
+			@include media-breakpoint-up(xl){
+				font-size: rem(32);
+				margin-bottom: rem(27);
+			}
+
+		}
+		&__descr{
+			color: $secondary;
+
+			font-size: 16px;
+			@include media-breakpoint-up(xl){
+				font-size: rem(22);
+			}
+		}
+
+
+		&__input-wrap{
+			padding-bottom: rem(12);
+			position: relative;
+		}
+		//inp, ta
+		&__input{
+			border: 2px solid #e1e1e1;
+			font-size: rem(22);
+			background-color: $white;
+			box-shadow: none;
+			padding: rem(15px);
+			border-radius: rem(8px);
+
+			@include placeholder{
+				color: $secondary;
+			}
+		}
+		input{
+			height: rem(62px);
+			padding-left: 64px;
+
+			font-size: 16px;
+			@include media-breakpoint-up(xl){
+				font-size: 22px;
+			}
+		}
+		textarea{
+			height: rem(136);
+
+			//
+			font-size: 14px;
+
+			@include placeholder{
+				color: #bebebe;
+			}
+		}
+		//icons
+
+		&__input-img{
+			position: absolute;
+			left: rem(20px);
+			top: rem(15px);
+			width: auto;
+			height: auto;
+
+			img{}
+		}
+
+		//polite
+		&__polite{
+
+			//checked
+			.custom-input__input:checked + .custom-input__lab:after{
+				opacity: 1;
+			}
+			.custom-input__lab{
+				width: 22px;
+				height: 22px;
+				background-color: $white;
+				border: 2px solid #e1e1e1;
+				border-radius: 3px;
+				//position: relative;
+
+				&:after{
+					opacity: 0;
+					content: '✓';
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					font-size: rem(16);
+					color: black;
+
+					transform: none;
+					position: absolute;
+					left: 0;
+					top: 0;
+					width: 100%;
+					height: 100%;
+					background-color: transparent;
+				}
+			}
+			//txt
+			.custom-input__text{
+				font-size: rem(14px);
+				a{
+					text-decoration: underline;
+				}
+			}
+		}
+
+		&__subm-btn{
+			@extend .btn;
+			@extend .btn-primary;
+
+			width: rem(220px);
+			height: 45px;
+
+			display: flex;
+			align-items: center;
+			justify-content: center;
+
+
+			@include media-breakpoint-up(xs){
+				margin-left: auto;
+				margin-right: auto;
+			}
+			@include media-breakpoint-up(lg){
+				margin-left: auto;
+				margin-right: 0;
+			}
+		}
+		&__{}
+		&__{}
+	}
+
+
 	@include media-breakpoint-up(xl) {}
 	@include media-breakpoint-up(lg) {}
 	@include media-breakpoint-up(md) {}

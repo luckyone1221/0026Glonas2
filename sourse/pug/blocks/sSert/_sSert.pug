@@ -3,13 +3,13 @@ mixin sSert()
 	+b.SECTION.sSert.section#sSert&attributes(attributes)
 		.container
 			.row
-				.col-lg-6
+				+e.cerfificats-col.col-xl-6
 					+e.headline Наши сертификаты
 					+e.certificats-row.row
 						+CertificatItem(1)
 						+CertificatItem(2)
 						+CertificatItem(3)
-				.col-lg-6
+				.col-xl-6
 					+e.consult-form
 						+form-wrap()
 							+e.headline БЕСПЛАТНАЯ КОНСУЛЬТАЦИЯ
@@ -22,7 +22,7 @@ mixin sSert()
 	// end sSert
 
 mixin CertificatItem(imgNum)
-	+e.certificat-item.col-4.text-center
+	+e.certificat-item.col-sm-4.text-center
 		+e.A.item-content(href=`img/@2x/certificat-${imgNum}.jpg` data-fancybox="prodImgGroup")
 			+e.img-cont
 				img(src=`img/@2x/certificat-${imgNum}.jpg` alt="")

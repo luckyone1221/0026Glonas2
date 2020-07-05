@@ -1,9 +1,21 @@
 mixin sForm()
 	// start sForm
-	+b.SECTION.sForm.section#sForm&attributes(attributes)
+	+b.sForm#sForm&attributes(attributes)
 		.container
-			+b.section-title.text-center
-				h2 sForm
-				
-			.row
+			+form-wrap()
+				.row
+					+e.txt-col.col-md-6.col-lg-4
+						+e.headline Оставить заявку на&nbsp;установку
+						+e.descr Профессиональный менеджер подберет для вас оптимальное решение по&nbsp;мониторингу транспорта
+					.col-md-6.col-lg-4
+						+input('', 'tel')
+							+e.input-img
+								img.lazy(src="#" data-src="img/@2x/sForm-phone.png" alt="")
+						+input('E-mail', 'email')
+							+e.input-img
+								img.lazy(src="#" data-src="img/@2x/sForm-mail.png" alt="")
+						+polite()
+					.col-lg-4
+						+input('Поле для реквизитов и  информации о машинах', 'textarea')
+						+e.BUTTON.subm-btn Оставить заявку
 	// end sForm

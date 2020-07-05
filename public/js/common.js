@@ -77,6 +77,13 @@ function eventHandler() {
 			$img.replaceWith($svg);
 		}, 'xml');
 	});
+
+	function CustomSvgManagment() {
+		var allImg = document.querySelectorAll('img.img-svg');
+		if (allImg.length === 0) return; //console.log(allImg);
+	} //CustomSvgManagment();
+
+
 	var isIE11 = !!window.MSInputMethodContext && !!document.documentMode;
 
 	if (isIE11) {
