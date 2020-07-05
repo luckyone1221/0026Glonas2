@@ -2,6 +2,53 @@
 	// start .sMonitoring
 	.sMonitoring {
 		 background-color: rgba($color: #d7d7d7, $alpha: .5);
+		 	position: relative;
+			 overflow: hidden;
+			 
+
+		 	.container {
+				z-index: 2;
+				position: relative;
+		 	}
+
+		 	&__before {
+		 		position: absolute;
+				border-radius: 10px;
+				z-index: -1;
+		 		&--1 {
+		 			width: 373px;
+		 			height: 457px;
+		 			border: 2px solid $primary;
+		 			top: rem(-50);
+		 			left: -400px;
+				 }
+				 
+		 		&--2 {
+		 		width: 257px;
+		 		height: 512px;
+		 		border: 2px solid #ffffff;
+		 			top: rem(150);
+		 			left: -450px;
+				 }
+				 
+				 
+		 		&--3 {
+		 		width: 205px;
+		 		height: 562px;
+		 		border: 2px solid #ffffff;
+		 			top: rem(50);
+		 		right: -450px;
+				 }
+				 
+		 		&--4 {
+					width: 365px;
+					height: 437px;
+					border: 2px solid $primary;
+		 			top: rem(300);
+		 		right: -350px;
+				 }
+				 
+		 	}
 		 .row{
 			 position: relative;
 			 justify-content: space-between;
@@ -82,13 +129,16 @@
 	@include media-breakpoint-down(xl) {}
 	@include media-breakpoint-down(lg) {}
 	@include media-breakpoint-down(md) {}
-	@include media-breakpoint-down(sm) {}
+	@include media-breakpoint-down(sm) {
+			text-align: center;
+
+			&__title {
+				margin-left: auto;
+				margin-right: auto;
+			}
+	}
 	@include media-breakpoint-down(xs) {
-		text-align: center;
-		&__title{
-			margin-left: auto;
-			margin-right: auto;
-		}
+	
 	} 
 
 } // end.sMonitoring

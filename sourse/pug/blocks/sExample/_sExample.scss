@@ -1,7 +1,111 @@
 
 	// start .sExample
 	.sExample {
-		 
+		 background-color: $light;
+		--sTPB: #{rem(70)};
+
+			position: relative;
+			overflow: hidden;
+
+
+			.container {
+				z-index: 2;
+				position: relative;
+			}
+
+			&__before {
+				position: absolute;
+				border-radius: 10px;
+				z-index: -1;
+
+				&--1 {
+					width: 373px;
+					height: 457px;
+					top: rem(-50);
+					border: 2px solid #ffffff;
+					left: -400px;
+				}
+
+				&--2 {
+					border: 2px solid $primary;
+					width: 257px;
+					height: 512px;
+					top: rem(150);
+					left: -450px;
+				}
+
+
+				&--3 {
+					width: 205px;
+					height: 562px;
+					top: rem(-150);
+					right: -300px;
+					border: 2px solid $primary;
+				}
+
+				&--4 {
+					width: 365px;
+					border: 2px solid #ffffff;
+					height: 537px;
+					top: rem(300);
+					right: -150px;
+				}
+
+			}
+		// padding-bottom: --sTPB;
+		 &__slider-wrapper{
+			 position: relative;
+		 }
+			&__slider{
+						max-width: 1080px;
+						margin-left: auto;
+						margin-right: auto;
+						margin-bottom: rem(24);
+			}
+		 &__slide{
+			 min-height: 100%;
+			 height: initial;
+			//  height: rem(491px);
+			 box-shadow: -1px -5px 5px rgba(0, 0, 0, 0.07);
+			 background-color: #ffffff;
+			 border-radius: 10px;
+			 padding: rem(13);
+			 padding-bottom: rem(30);
+		 }
+		 &__img-wrap{
+			 box-shadow: -1px -5px 5px rgba(0, 0, 0, 0.13);
+			 background-color: #ffffff;
+			 border-radius: 10px;
+			 position: relative;
+			 overflow: hidden;
+			 margin-bottom: rem(50);
+			 &::after{
+				 content: '';
+				 width: rem(144);
+				 height: rem(144);
+				 @include a-cent;
+				 background-image: url(../img/@2x/zoom-in_copy.png);
+				 background-position: center center;
+				 background-repeat: no-repeat;
+			 }
+		 }
+		 &__footer{
+			 @extend .h4;
+			 font-weight: 600;
+			 color: $body-color !important;
+			 border-top: 1px solid #d7d7d7;
+			 padding-top: rem(30);
+			 .row{
+				 align-items: center;
+			 };
+			 .img-svg {
+				 width: rem(56);
+				 path{
+
+					 fill: $primary !important;
+					}
+			 }
+		 }
 	@include media-breakpoint-up(xl) {}
 	@include media-breakpoint-up(lg) {}
 	@include media-breakpoint-up(md) {}

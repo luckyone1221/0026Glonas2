@@ -26,7 +26,33 @@ var JSCCommon = {
 };
 
 function eventHandler() {
-	JSCCommon.modalCall(); //Replace all SVG images with inline SVG
+	JSCCommon.modalCall();
+	var swiper4 = new Swiper('.sExample__slider--js', {
+		// slidesPerView: 5,
+		slidesPerView: 1,
+		watchOverflow: true,
+		spaceBetween: 30,
+		loop: true,
+		slideToClickedSlide: true,
+		navigation: {
+			nextEl: '.swiper-button-next',
+			prevEl: '.swiper-button-prev'
+		},
+		pagination: {
+			el: '.swiper-pagination',
+			type: 'bullets',
+			clickable: true
+		},
+		lazy: {
+			loadPrevNext: true
+		},
+		breakpoints: {
+			// when window width is >= 320px
+			768: {
+				slidesPerView: 2
+			}
+		}
+	}); //Replace all SVG images with inline SVG
 
 	$('img.img-svg ').each(function () {
 		var $img = $(this);

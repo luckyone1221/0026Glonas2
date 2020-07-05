@@ -2,6 +2,55 @@
 	// start .sServises
 	.sServises {
 		 background-color: $light;
+
+		  	position: relative;
+		  	overflow: hidden;
+
+
+		  	.container {
+		  		z-index: 2;
+		  		position: relative;
+		  	}
+
+		  	&__before {
+		  		position: absolute;
+		  		border-radius: 10px;
+		  		z-index: -1;
+
+		  		&--1 {
+		  			width: 373px;
+		  			height: 457px;
+		  			top: rem(-50);
+						border: 2px solid #ffffff;
+		  			left: -400px;
+		  		}
+					
+		  		&--2 {
+						border: 2px solid $primary;
+		  			width: 257px;
+		  			height: 512px;
+		  			top: rem(150);
+		  			left: -450px;
+		  		}
+
+
+		  		&--3 {
+		  			width: 205px;
+		  			height: 562px;
+		  			top: rem(50);
+		  			right: -450px;
+						border: 2px solid $primary;
+		  		}
+					
+		  		&--4 {
+						width: 365px;
+						border: 2px solid #ffffff;
+		  			height: 537px;
+		  			top: rem(300);
+		  			right: -450px;
+		  		}
+
+		  	}
 			.section-title{
 				margin-left: auto;
 				margin-right: auto;

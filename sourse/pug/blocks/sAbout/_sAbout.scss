@@ -2,11 +2,29 @@
 	// start .sAbout
 	.sAbout {
 		text-align: center;
-			background-color: rgba($color: $light, $alpha: .5);
+		position: relative;
+		overflow: hidden;
+		.container{
+			position: relative;
+		}
+		&__before{
+			position: absolute;
+			&--1{
+				width: 373px;
+				height: 457px;
+				border: 2px solid $primary;
+				top: rem(-50);
+				left: -200px;
+			}
+		}
+		&__img-wrap{
+
+			height: rem(90);
+			margin-bottom: rem(35);
+		}
 		img{
 			max-width: rem(110);
 			max-height: rem(90);
-			margin-bottom: rem(35);
 		}
 		&__title{
 			@include rfs(rem(28));
@@ -37,6 +55,7 @@
 			@extend .btn;
 			@extend .btn-primary;
 		}
+		 
 		 
 	@include media-breakpoint-up(xl) {}
 	@include media-breakpoint-up(lg) {}

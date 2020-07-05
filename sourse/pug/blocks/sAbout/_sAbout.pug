@@ -9,7 +9,7 @@ mixin sAbout()
 			.row
 				mixin item(i,t,p)
 					+e.col.col-xl-3.col-sm-6
-						img.img-svg(src=`img/about-${i}.svg`, alt="")
+						+e.img-wrap: img(src=`img/about-${i}.svg`, alt="")
 						+e.title!= t
 						p!= p
 				+item('1','ОБОРУДОВАНИЕ','Cоответствие техническим требованиям 153 Постановления')

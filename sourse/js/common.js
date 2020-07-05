@@ -30,6 +30,36 @@ const JSCCommon = {
 function eventHandler() { 
 	JSCCommon.modalCall();  
 
+	const swiper4 = new Swiper('.sExample__slider--js', {
+		// slidesPerView: 5,
+
+		slidesPerView: 1,
+		watchOverflow: true,
+		spaceBetween: 30,
+
+		loop: true,
+		slideToClickedSlide: true,
+		navigation: {
+			nextEl: '.swiper-button-next',
+			prevEl: '.swiper-button-prev',
+		},
+		pagination: {
+			el: '.swiper-pagination',
+			type: 'bullets',
+			clickable: true
+		},
+		lazy: {
+			loadPrevNext: true,
+		},
+		breakpoints: {
+			// when window width is >= 320px
+		 
+			768: {
+				slidesPerView: 2
+			}
+		}
+	});
+
 	//Replace all SVG images with inline SVG
 
 	$('img.img-svg ').each(function () {
@@ -55,6 +85,7 @@ function eventHandler() {
 			$img.replaceWith($svg);
 		}, 'xml');
 	})
+
 
 	var isIE11 = !!window.MSInputMethodContext && !!document.documentMode;
 	if (isIE11) {
