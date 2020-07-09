@@ -25,15 +25,15 @@ mixin sServises()
 						| От 
 						span.text-primary 1 990 руб.
 				+item(`3`,`Переподключение сторонних трекеров GPS/ГЛОНАСС`,``)
-					+e.btn(href="#") Запросить
+					+e.btn.link-modal(href="#modal-call" data-title="Запросить") Запросить
 				+item(`4`,`Выезд на установку`,`Бесплатно`)
 				+item(`5`,`СМС-Уведомление о&nbsp;событиях в&nbsp;работе автомобиля`,`3 руб./шт.`)
 				+item(`6`,`Тест-драйв на&nbsp;2&nbsp;недели`,`Бесплатно`)
 				+item(`7`,`Установка дополнительного оборудования`,``)
-					+e.btn(href="#") Запросить
+					+e.btn.link-modal(href="#modal-call" data-title="Запросить") Запросить
 				+item(`8`,`Абонентская плата`,``)
 					+e.price
 						| От 
 						span.text-primary 375 руб.
-			+e.btn-primary(href="#") Получить скидку
+			+e.btn-primary.link-modal(href="#modal-call" data-title="Получить скидку") Получить скидку
 	// end sServises

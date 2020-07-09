@@ -12,18 +12,19 @@ mixin sExample()
 			+e.slider-wrapper
 				+e.slider--js.swiper-container
 					.swiper-wrapper
-						mixin slide(t)
-							+e.slide.swiper-slide(href='img/@1x/example.png' data-fancybox="ex")
+						mixin slide(i,t)
+							+e.slide.swiper-slide(href=`img/@2x/example-${i}.jpg` data-fancybox="ex")
 								+e.DIV.img-wrap
-									img.swiper-lazy.res-i(src="#" data-src="img/@1x/example.png", alt="")
+									img.swiper-lazy.res-i(src="#" data-src=`img/@1x/example-${i}.jpg`, alt="")
 								+e.DIV.footer
 									.row
 										.col
 											+e.DIV.title= t
 										.col-auto
 											img.img-svg(src="img/graf.svg", alt="")
-						+slide('Анализ расхода топлива')
-						+slide('Отчёт по карточке транспортного средства')
+						+slide('1','Виды отчетов и объекты')
+						+slide('2',' Главный экран')
+						+slide('3','Карточка транспортного средства')
 				+arrow
 				.swiper-pagination
 	// end sExample

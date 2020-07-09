@@ -197,8 +197,16 @@
 		display: block;
 		position: relative;
 
-		padding-top: 56.1%;
-
+		border-radius: 10px;
+		overflow: hidden;
+		@include block(692,388);
+		video{
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 100% !important;
+			height: 100% !important;
+		}
 	}
 	&__video-img{
 		position: absolute;

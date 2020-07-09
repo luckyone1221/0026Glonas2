@@ -24,8 +24,7 @@ mixin sWork()
 							+e.reason-pill Оказывает полную техническую поддержку
 				.col-lg-7.col-xxl-8
 					+e.video
-						+e.video-headline Видеопрезентация спутникового мониторинга транспорта&#160;МСС ГЛОНАСС
-						+e.A.video-link(href="https://www.youtube.com/watch?v=en6gms6e54Q&list=PLIU76b8Cjem5B3sufBJ_KFTpKkMEvaTQR" data-fancybox="video")
-							+e.video-img
-								img.lazy(src="#" data-src=`img/@2x/sWork-video.jpg` alt='')
+						+e.video-headline Видеопрезентация спутникового мониторинга транспорта&#160;МСС ГЛОНАСС 
+						+e.video-link 
+							<video controls="" height="363" poster="img/@2x/poster.jpg" width="599"><source src="video.mp4" type="video/mp4"></video>
 	// end sWork

@@ -22,6 +22,21 @@ const JSCCommon = {
 			$.fancybox.close();
 		})
 		$.fancybox.defaults.backFocus = false;
+		
+		$(".link-modal").click(function () {
+			let th = $(this);
+			let modal = $(th.attr('href'));
+			let content = {
+				title: th.data('title'),
+				text: th.data('text'),
+				btn: th.data('btn'),
+				order: th.data('order')
+			}
+			modal.find('.h2').html(content.title);
+			// modal.find('.after-headline').html(content.text);
+			// modal.find('.btn').val(content.btn);
+			// modal.find('.order').val(content.order);
+		})
 	},
  
 

@@ -18,7 +18,7 @@ mixin sControl()
 						+pic(`sControl-${i}.jpg`,'','',0)
 						+e.title!= t
 						p!= p
-						+e.btn(href="#") Запросить цену
+						+e.btn.link-modal(href="#modal-call" data-title="Запросить цену") Запросить цену
 				// /+e.col.col-lg-4.col-sm-6
 			.row
 				+item(`1`,`ГЛОНАСС/GPS ТРЕКЕР`,`Не&nbsp;требуется дополнительных вложений в&nbsp;оборудование, подходит для бухгалтерского учета`)

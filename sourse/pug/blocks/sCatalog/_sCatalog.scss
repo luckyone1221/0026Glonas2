@@ -41,12 +41,13 @@
 		 &__price{
 			 text-align: center;
 			 @include rfs(rem(20));
-			 font-weight: bold;
+			 font-weight: 600;
 			}
 			table{
 				.text-primary{
 					
-					font-weight: bold;
+					// font-weight: bold;
+					font-weight: 600;
 					@include rfs(rem(20));
 			 }
 		 }

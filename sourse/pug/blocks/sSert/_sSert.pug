@@ -25,5 +25,5 @@ mixin CertificatItem(imgNum)
 	+e.certificat-item.col-sm-4.text-center
 		+e.A.item-content(href=`img/@2x/certificat-${imgNum}.jpg` data-fancybox="prodImgGroup")
 			+e.img-cont
-				img(src=`img/@2x/certificat-${imgNum}.jpg` alt="")
+				img.lazy(src="#" data-src=`img/@1x/certificat-${imgNum}.jpg` alt="")
 			+e.item-title Лицензия на оказане телематических услуг связи
