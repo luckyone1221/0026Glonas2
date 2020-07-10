@@ -13,6 +13,7 @@
 		  	}
 				&__price{
 					font-weight: 600;
+					@include rfs(rem(20));
 				}
 		  	&__before {
 		  		position: absolute;
