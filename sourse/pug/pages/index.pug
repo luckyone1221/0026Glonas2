@@ -1,6 +1,5 @@
 extends layout/main.pug
 
-
 include ../blocks/sContent/_sContent.pug
 include ../blocks/sContact/_sContact.pug 
 include ../blocks/sTestDrive/_sTestDrive.pug 
@@ -16,34 +15,37 @@ include ../blocks/sControl/_sControl.pug
 include ../blocks/sExample/_sExample.pug 
 include ../blocks/sSert/_sSert.pug 
 include ../blocks/sWork/_sWork.pug 
-include ../blocks/sStart/_sStart.pug 
+include ../blocks/sStart/_sStart.pug
+include ../blocks/sSetUp/_sSetUp.pug
+include ../blocks/sPrice/_sPrice.pug
+include ../blocks/sFeedback/_sFeedback.pug
 
 block variables
 	- let  mainPage= null
 block title
 	- let  title= 'title'
 	title= title
-block pagecontent 
-	//- +mob-mnu()
+block pagecontent
 	+header()
-		+topLine()  
-
-	+headerBlock()
-	+sTestDrive
-	+sLogo
-	+sGift
-	+sAbout
-	+sMonitoring
-	+sGaranty
-	+sCatalog
-	+sServises
-	+sGet
-	+sControl
-	+sExample
-	+sSert
-	+sWork
-	+sStart
+		+topLine()
+	+breadcrumb('MCC ГЛОНАСС', 'Услуги')
+	+sSetUp()
+	+sPrice()
 	+sForm()
-	+footer()
-		+topLine('img/@2x/logo-white.png')
-	
+	+sStart
+	+sCatalog
+	+sSert
+	+sGet
+	+sFeedback
+	+footer
+	//-+sTestDrive
+	//-+sLogo
+	//-+sGift
+	//-+sAbout
+	//-+sMonitoring
+	//-+sGaranty
+	//-+sServises
+	//-+sControl
+	//-+sExample
+	//-+sWork
+	//-+sStart

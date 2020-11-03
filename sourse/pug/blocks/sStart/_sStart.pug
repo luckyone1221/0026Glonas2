@@ -1,25 +1,26 @@
 mixin sStart()
 	// start sStart
 	+b.SECTION.sStart.section#sStart&attributes(attributes)
-		.container
+		+e.container.container
 			+b.section-title.text-center
-				h2 Как начать сотрудничество
+				h2 Схема работы
 			.row
-
 				+e.item.left-order.col-lg-4
 					+e.item-img
-						img.img-svg(src='img/sStartSvg1.svg' alt="")
+						img(src='img/@2x/scheme-img-1.png' alt="")
 					+e.descr-block
 						+e.item-headline
 							|Оставить
 							|
 							br
 							|заявку
-						+e.item-title Потребуются ваши реквизиты и информация о транспорте
-
+						+e.item-title
+							| Потребуются ваши реквизиты и
+							br
+							| информация о транспорте
 				+e.item.ready-order.col-lg-4
 					+e.item-img
-						img.img-svg(src='img/sStartSvg2.svg' alt="")
+						img(src='img/@2x/scheme-img-2.png' alt="")
 					+e.descr-block
 						+e.item-headline
 							|ПОДГОТОВИМ
@@ -28,13 +29,10 @@ mixin sStart()
 							|ПРЕДЛОЖЕНИЕ
 						+e.item-title
 							|В течение
-							|
-							br
 							|30 минут
-
 				+e.item.instaliation.col-lg-4
 					+e.item-img
-						img.img-svg(src='img/sStartSvg3.svg' alt="")
+						img(src='img//@2x/scheme-img-1.png' alt="")
 					+e.descr-block
 						+e.item-headline
 							|Выезжаем к&nbsp;вам
@@ -42,5 +40,4 @@ mixin sStart()
 							br
 							|на&nbsp;установку
 						+e.item-title В течение суток
-
 	// end sStart

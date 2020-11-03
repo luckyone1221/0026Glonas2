@@ -12,10 +12,17 @@ mixin sSert()
 				.col-xl-6
 					+e.consult-form
 						+form-wrap()
-							+e.headline БЕСПЛАТНАЯ КОНСУЛЬТАЦИЯ
-							+e.txt Оставьте заявку на&nbsp;консультацию, и&nbsp;профессиональный менеджер подберет для вас оптимальное решение по&nbsp;мониторингу транспорта
+							+e.top-txt
+								+e.img-c.d-none.d-sm-block
+									img.lazy(src="#" data-src="img/@2x/cert-form-img.png" alt="")
+								+e.txt-c
+									+e.headline БЕСПЛАТНАЯ КОНСУЛЬТАЦИЯ
+									+e.txt Оставьте заявку на&nbsp;консультацию, и&nbsp;профессиональный менеджер подберет для вас оптимальное решение&nbsp;по мониторингу транспорта
 							+e.inputs-cont
-								+e.INPUT.input(type="tel" name="client_phone" placeholder="+7 (___) - ___ - __ - __")
+								//-+e.INPUT.input(type="tel" name="client_phone" placeholder="+7 (___) - ___ - __ - __")
+								+input('+7 (___) - ___ - __ - __', 'tel')
+									+e.input-img
+										img.lazy(src="#" data-src="img/@2x/sForm-phone.png" alt="")
 								+e.BUTTON.call-btn(type='submit') Перезвонить
 
 
@@ -26,4 +33,4 @@ mixin CertificatItem(imgNum)
 		+e.A.item-content(href=`img/@2x/certificat-${imgNum}.jpg` data-fancybox="prodImgGroup")
 			+e.img-cont
 				img.lazy(src="#" data-src=`img/@1x/certificat-${imgNum}.jpg` alt="")
-			+e.item-title Лицензия на оказане телематических услуг связи
+			+e.item-title Лицензия на оказане телематических услуг&nbsp;связи

@@ -1,0 +1,23 @@
+mixin sFeedback()
+	// start sFeedback
+	+b.SECTION.sFeedback.section#sFeedback&attributes(attributes)
+		.container
+			+b.section-title.text-center
+				h2 Отзывы наших Клиентов
+				+e.controlls.d-none.d-lg-flex
+					+b.feedback-prev--js
+					+b.feedback-next--js
+			+e.slider
+				.swiper-container.feedback-slider-js
+					.swiper-wrapper
+						- for(var i = 0; i < 5; i++)
+							+feedbackSlide(i)
+					+b.feedback-pugin--js.d-lg-none
+	// end sFeedback
+
+mixin feedbackSlide(num)
+	.swiper-slide
+		+e.portrait
+			+e.img
+				img.swiper-lazy(src="#" data-src="img/@2x/portrait-stab.jpg" alt="")
+		+e.txt=`Добросовестный и эффективный труд компетентных специалистов компании «Ставтрэк» позволил нашей компании оперативно и качественно решать технические, информационные и сервисные вопросы по обслуживанию наших объектов.${num}`

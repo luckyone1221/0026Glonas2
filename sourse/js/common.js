@@ -105,8 +105,10 @@ function eventHandler() {
 		if (allImg.length === 0) return
 		//console.log(allImg);
 	}
+
+
 	//CustomSvgManagment();
-	
+	$(".main-wrapper").after('<div class="pixel-perfect" style="background-image: url(screen/01.png);"></div>')
 
 
 	var isIE11 = !!window.MSInputMethodContext && !!document.documentMode;
@@ -126,6 +128,79 @@ function eventHandler() {
 		let vh = window.innerHeight * 0.01;
 		document.documentElement.style.setProperty('--vh', `${vh}px`);
 	});
+
+	//luckyone js
+
+	//breadcrumbs
+	let breadSl = new Swiper('.breadcrumb-slider-js', {
+		slidesPerView: 'auto',
+		freeMode: true,
+		freeModeMomentum: true,
+		watchOverflow: true,
+	});
+	//mob mnu
+	$('.burger-js').click(function (){
+		$('.burger-js, .menu-c--js').toggleClass('active');
+		$('body').toggleClass('fixed');
+	});
+	function closeMobMnu(){
+		$('.burger-js, .menu-c--js').removeClass('active');
+		$('body').removeClass('fixed');
+	}
+
+	window.addEventListener('resize', function (){
+		if (window.matchMedia("(min-width: 1200px)").matches){
+			closeMobMnu();
+		}
+	}, {passive: true});
+
+	//table slider
+	let TableSlider = new Swiper('.table-slider-js', {
+		slidesPerView: 'auto',
+		freeMode: true,
+		freeModeMomentum: true,
+		watchOverflow: true,
+
+		lazy: {
+			loadPrevNext: true,
+			loadPrevNextAmount: 100,
+		},
+	});
+	//
+	let feedbackSlider = new Swiper('.feedback-slider-js', {
+		slidesPerView: 'auto',
+		loop: true,
+		spaceBetween: 31,
+
+		//
+		lazy: {
+			loadPrevNext: true,
+			loadPrevNextAmount: 4,
+		},
+		//
+		navigation: {
+			prevEl: '.feedback-prev--js',
+			nextEl: '.feedback-next--js',
+		},
+
+		//pagination
+		pagination: {
+			el: $(this).find('.feedback-pugin--js'),
+			clickable: true,
+		},
+	});
+	//
+	function currYear(){
+		let all = document.querySelectorAll('.curr-year-js');
+		let currYear = new Date().getFullYear();
+
+		for (let item of all){
+			item.innerHTML = currYear;
+		}
+	}
+	currYear();
+	//end luckyone js
+
 };
 if (document.readyState !== 'loading') {
 	eventHandler();

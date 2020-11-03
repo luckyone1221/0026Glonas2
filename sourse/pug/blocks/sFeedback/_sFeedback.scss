@@ -1,0 +1,115 @@
+// start .sFeedback
+.sFeedback {
+	background-color: $header-gray;
+
+	--sPT: #{rem(30px)};
+	--sPB: #{rem(30px)};
+	--sTPB: #{rem(25px)};
+	@include media-breakpoint-up(lg){
+		--sPT: #{rem(29px)};
+		--sPB: #{rem(58px)};
+		--sTPB: #{rem(32px)};
+	}
+
+	.section-title{
+		position: relative;
+		h2{
+			font-weight: 600;
+		}
+		&__controlls{
+			position: absolute;
+			top: 3px;
+			right: -4px;
+			display: flex;
+			width: auto;
+			align-items: center;
+			//background-color: blue;
+		}
+	}
+
+	//prev, next
+	.feedback-prev,
+	.feedback-next{
+		outline: none!important;
+		box-shadow: none !important;
+
+		width: 0;
+		height: 0;
+		border-style: solid;
+		@include mt();
+		&:hover{
+			transform: scale(1.1);
+		}
+	}
+
+	.feedback-prev{
+		border-width: 22px 50px 22px 0;
+		border-color: transparent $primary transparent transparent;
+	}
+	.feedback-next{
+		margin-left: rem(22px);
+		border-width: 22px 0 22px 50px;
+		border-color: transparent transparent transparent $primary;
+	}
+
+	//slider
+	&__slider{
+		.swiper-container{}
+		.swiper-wrapper{
+
+		}
+		.swiper-slide{
+			background-color: $white;
+			width: 100%;
+
+			height: auto;
+			@include media-breakpoint-up(lg){
+				width: calc(50% - 15.5px);
+			}
+
+			min-height: rem(298px);
+
+			padding: rem(15);
+			@include media-breakpoint-up(sm){
+				padding: rem(30);
+				display: flex;
+			}
+
+		}
+		//pugin
+		.feedback-pugin{
+			padding: 15px 0;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+
+			.swiper-pagination-bullet{
+				width: 16px;
+				height: 16px;
+			}
+		}
+
+	}
+
+	&__portrait{
+		flex-shrink: 0;
+
+		width: 100%;
+		max-width: 161px;
+		margin-bottom: rem(30);
+		@include media-breakpoint-up(sm){
+			margin-right: rem(30);
+			margin-bottom: rem(0);
+			width: 30%;
+		}
+	}
+	&__img{
+		background-color: transparent;
+		@extend .accept-ratio-frame-nh;
+		padding-top: 100%;
+	}
+	&__txt{
+		color: $secondary;
+		line-height: 1.2;
+	}
+} // end.sFeedback

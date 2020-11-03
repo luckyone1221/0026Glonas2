@@ -1,0 +1,86 @@
+// start .sSetUp
+.sSetUp {
+	--sPT: #{rem(23px)};
+	--sPB: #{rem(10)};
+	--sTPB: #{rem(20)};
+
+	.container{
+		padding: 0 15px;
+	}
+	.section-title{
+		h2{
+			font-weight: 600;
+		}
+	}
+
+	//row
+	&__row{
+		margin-bottom: rem(28);
+		@include media-breakpoint-up(lg){
+			display: flex;
+			align-items: stretch;
+		}
+	}
+
+	//imgs box
+	&__imgs{
+		flex-shrink: 0;
+		display: flex;
+		align-items: stretch;
+
+		width: 100%;
+		margin-bottom: rem(30);
+		@include media-breakpoint-up(lg){
+			margin-bottom: 0;
+			width: rem(410px);
+			margin-right: rem(30px);
+		}
+		@include media-breakpoint-up(xl){
+			width: rem(510px);
+			margin-right: rem(30px);
+		}
+		@include media-breakpoint-up(xl){
+			width: rem(510px);
+			margin-right: rem(30px);
+		}
+		@include media-breakpoint-up(xxl){
+			width: rem(519px);
+			margin-right: rem(53px);
+		}
+	}
+	//item img
+	&__img-item{
+		width: calc(50% - 12.5px);
+		margin-right: 25px;
+		&:last-child{
+			margin-right: 0;
+		}
+	}
+	&__img{
+		@extend .accept-ratio-frame;
+		padding-top: (251/247) * 100%;
+	}
+	&__txt-item{
+		color: $gray-2;
+		line-height: 1.2;
+		p{
+			margin-bottom: 19px;
+		}
+		& > *:last-child{
+			margin-bottom: 0;
+		}
+	}
+
+	//
+	&__banner{
+
+		img{
+			width: auto;
+			height: auto;
+			max-width: 100%;
+		}
+	}
+	//
+	&__{}
+	&__{}
+} // end.sSetUp

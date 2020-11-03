@@ -1,10 +1,9 @@
 mixin sGet()
 	// start sGet
-	+b.sGet#sGet&attributes(attributes)
-		.container.section
+	+b.sGet.section#sGet&attributes(attributes)
+		.container
 			+b.section-title.text-center
-				h2 Что вы&nbsp;получаете при мониторинге транспортного средства:
-				
+				h2 Наши преимущества
 			.row
 				mixin item(i,t)
 					+e.col.col-lg-4.col-sm-6
@@ -12,7 +11,6 @@ mixin sGet()
 							+e.icon-wrap
 								img.img-svg(src=`img/${i}`, alt="")
 							+e.title!= t
-						 
 				+item(`station.svg`,`Контроль топлива: заправки, сливы,&nbsp;расход`)
 				+item(`control.svg`,`Контроль на&nbsp;маршруте: Передвижение&nbsp;/ Скорость/ Киллометраж/ Состояние зажигания и&nbsp;учет моточасов`)
 				+item(`about-2.svg`,`Слежение за&nbsp;транспортом в&nbsp;режиме ON-Line и&nbsp;ведение архива до&nbsp;2&nbsp;лет`)

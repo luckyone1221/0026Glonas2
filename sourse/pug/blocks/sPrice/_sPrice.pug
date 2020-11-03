@@ -1,0 +1,32 @@
+mixin sPrice()
+	// start sPrice
+	+b.SECTION.sPrice.section#sPrice&attributes(attributes)
+		.container
+			+b.section-title.text-center
+				h2 Цены на установку
+			+e.slider
+				.swiper-container.table-slider-js
+					.swiper-wrapper
+						.swiper-slide
+							+priceTable()
+	// end sPrice
+
+mixin priceTable()
+	+e.table
+		+e.row--head
+			- for (var i=1; i <= 7; i++)
+				+e.col--head
+					| Модель
+					br
+					| тахографа
+		+e.row
+			+e.col
+				| Цена
+				br
+				| прибора
+			- for (var i=1; i <= 6; i++)
+				+e.col 33000 руб.
+		+e.row
+			+e.col Стоимость установки
+			- for (var i=1; i <= 6; i++)
+				+e.col 33000 руб.

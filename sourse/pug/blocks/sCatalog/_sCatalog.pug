@@ -4,7 +4,6 @@ mixin sCatalog()
 		.container
 			+b.section-title.text-center
 				h2 Оборудование GPS/ГЛОНАСС
-				
 			+e.row.row
 				mixin item(i,t,pr, sm )
 					+e.col.col-xl-3.col-lg-4.col-sm-6
@@ -18,10 +17,9 @@ mixin sCatalog()
 											|
 											span.text-primary= pr
 									block
-
 									if sm
 										.small!= sm
-									a.btn.btn-primary.mt-2(href="#") Подробнее
+									//-a.btn.btn-primary.mt-2(href="#") Подробнее
 							+e.side--back 
 								+e.title!= t
 								.strong Один из самых точных вариантов контроля топлива на сегодняшний день. Монтаж производится врезанием  
@@ -35,10 +33,8 @@ mixin sCatalog()
 									li Стоимость установки от 1 990 руб
 									li ЗАКАЗАТЬ
 									li Дистанционное блокирование автомобиля
-								 
 								+e.foot
 									a.btn.btn-primary(href="#") Подробнее
-
 					// /+e.col.col-xl-3.col-lg-4.col-sm-6
 				+item(`1`,`GPS/ГЛОНАСС трекер (постоянный ON-Line контроль)`,`3 800 руб.`)
 				+item(`2`,`Трекер ГЛОНАСС/GPS + встроенный аккумулятор (постоянный ON-Line контроль)`,`4 500 руб.`)

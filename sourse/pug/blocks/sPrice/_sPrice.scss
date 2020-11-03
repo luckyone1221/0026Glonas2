@@ -1,0 +1,70 @@
+// start .sPrice
+.sPrice {
+	--sPT: #{rem(19px)};
+	--sTPB: #{rem(7)};
+
+	--sPB: #{rem(30px)};
+	@include media-breakpoint-up(lg){
+		--sPB: #{rem(48px)};
+	}
+
+	.section-title{
+		h2{
+			color: $menu-brown;
+			font-size: rem(28px);
+			font-weight: 400;
+		}
+	}
+	&__slider{
+		.swiper-container{
+			overflow: visible;
+		}
+		.swiper-wrapper{
+			overflow: visible;
+		}
+		.swiper-slide{
+			width: 1233px;
+			@include media-breakpoint-up(xl){
+				width: 100%;
+			}
+		}
+	}
+
+	&__table{
+		border-top: 1px solid $header-gray;
+		border-right: 1px solid $header-gray;
+		border-left: 1px solid $header-gray;
+	}
+	&__row{
+		display: flex;
+		align-items: stretch;
+		border-bottom: 1px solid $header-gray;
+
+		&--head{
+
+		}
+	}
+	&__col{
+		width: calc(100% / 7);
+		background-color: $white;
+		color: $body-color;
+		text-align: center;
+
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding: rem(14px) rem(20px);
+		line-height: 1.2;
+
+		&--head{
+			background-color: $primary;
+			color: $white;
+			padding: rem(16px) rem(20px) rem(19px) rem(20px);
+		}
+
+		& + &{
+			border-left: 1px solid $header-gray;
+		}
+	}
+	&__{}
+} // end.sPrice

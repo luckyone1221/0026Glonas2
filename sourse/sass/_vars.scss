@@ -12,6 +12,9 @@ $rfs-breakpoint: 1200px !default;
 // Color system
 
 $white: #fff !default;
+$header-gray: #eef0f2;
+$gray-2: #93949c;
+
 $gray-100: #f8f9fa !default;
 $gray-200: #e9ecef !default;
 $gray-300: #dee2e6 !default;
@@ -21,6 +24,7 @@ $gray-600: #6c757d !default;
 $gray-700: #495057 !default;
 $gray-800: #343a40 !default;
 $gray-900: #212529 !default;
+$menu-brown: #454545;
 $black: #000 !default;
 
 // fusv-disable
@@ -36,6 +40,7 @@ $grays: ("100": $gray-100,
 // fusv-enable
 
 $blue: #0d6efd !default;
+$light-blue: #4690d2;
 $indigo: #6610f2 !default;
 $purple: #6f42c1 !default;
 $pink: #d63384 !default;
@@ -202,7 +207,7 @@ $container-max-widths: (sm: 540px,
   md: 720px,
   lg: 960px,
   xl: 1140px,
-  xxl: 1320px) !default;
+  xxl: 1260px) !default;
 // scss-docs-end container-max-widths
 
 // @include _assert-ascending($container-max-widths, "$container-max-widths");

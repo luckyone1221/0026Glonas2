@@ -1,5 +1,11 @@
 "use strict";
 
+function _createForOfIteratorHelper(o, allowArrayLike) { var it; if (typeof Symbol === "undefined" || o[Symbol.iterator] == null) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = o[Symbol.iterator](); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
 var $ = jQuery;
 var JSCCommon = {
 	body: document.querySelector("body"),
@@ -97,6 +103,7 @@ function eventHandler() {
 	} //CustomSvgManagment();
 
 
+	$(".main-wrapper").after('<div class="pixel-perfect" style="background-image: url(screen/01.png);"></div>');
 	var isIE11 = !!window.MSInputMethodContext && !!document.documentMode;
 
 	if (isIE11) {
@@ -112,7 +119,86 @@ function eventHandler() {
 		// We execute the same script as before
 		var vh = window.innerHeight * 0.01;
 		document.documentElement.style.setProperty('--vh', "".concat(vh, "px"));
+	}); //luckyone js
+	//breadcrumbs
+
+	var breadSl = new Swiper('.breadcrumb-slider-js', {
+		slidesPerView: 'auto',
+		freeMode: true,
+		freeModeMomentum: true,
+		watchOverflow: true
+	}); //mob mnu
+
+	$('.burger-js').click(function () {
+		$('.burger-js, .menu-c--js').toggleClass('active');
+		$('body').toggleClass('fixed');
 	});
+
+	function closeMobMnu() {
+		$('.burger-js, .menu-c--js').removeClass('active');
+		$('body').removeClass('fixed');
+	}
+
+	window.addEventListener('resize', function () {
+		if (window.matchMedia("(min-width: 1200px)").matches) {
+			closeMobMnu();
+		}
+	}, {
+		passive: true
+	}); //table slider
+
+	var TableSlider = new Swiper('.table-slider-js', {
+		slidesPerView: 'auto',
+		freeMode: true,
+		freeModeMomentum: true,
+		watchOverflow: true,
+		lazy: {
+			loadPrevNext: true,
+			loadPrevNextAmount: 100
+		}
+	}); //
+
+	var feedbackSlider = new Swiper('.feedback-slider-js', {
+		slidesPerView: 'auto',
+		loop: true,
+		spaceBetween: 31,
+		//
+		lazy: {
+			loadPrevNext: true,
+			loadPrevNextAmount: 4
+		},
+		//
+		navigation: {
+			prevEl: '.feedback-prev--js',
+			nextEl: '.feedback-next--js'
+		},
+		//pagination
+		pagination: {
+			el: $(this).find('.feedback-pugin--js'),
+			clickable: true
+		}
+	}); //
+
+	function currYear() {
+		var all = document.querySelectorAll('.curr-year-js');
+		var currYear = new Date().getFullYear();
+
+		var _iterator = _createForOfIteratorHelper(all),
+				_step;
+
+		try {
+			for (_iterator.s(); !(_step = _iterator.n()).done;) {
+				var item = _step.value;
+				item.innerHTML = currYear;
+			}
+		} catch (err) {
+			_iterator.e(err);
+		} finally {
+			_iterator.f();
+		}
+	}
+
+	currYear(); //end luckyone js
 }
 
 ;

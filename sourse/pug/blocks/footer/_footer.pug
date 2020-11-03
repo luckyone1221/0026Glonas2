@@ -1,3 +1,42 @@
 mixin footer()
 	+b.FOOTER.footer.block-with-lazy
-		block
+		+e.container.container
+			+e.row
+				+e.rights-col
+					+e.rights
+						| © ООО «Мобильные Спутниковые Системы», 2012-
+						span.curr-year-js 2020
+					+e.licence Лицензия РОСКОМНАДЗОР №164859
+				+e.contact-col
+					//-+footerItem(1, 'ЛИЦЕНЗИЯ', '№141602 РОСКОМНАДЗОР')(class='d-none d-xl-block')
+					+footerItem(2, 'Москва', 'Пн-Вс с 09-00 до 21-00')(class='d-none d-xl-block')
+						+e.link(href="tel:+74956403978") +7 (495) 640-39-78
+					+footerItem(2, 'санкт петербург', 'Пн-Вс с 09-00 до 21-00')(class='d-none d-xl-block')
+						+e.link(href="tel:+78126470668") +7 (812) 647-06-68
+					+footerItem(3, 'бесплатно по россии', 'Многоканальный')(class='d-none d-xl-block')
+						+e.link(href="tel:88005553079") 8 (800) 555-30-79
+						+e.link.small(href="mailto:info@mssglonass.ru") info@mssglonass.ru
+				+e.btn-col
+					+e.btns-txt
+						| Мобильные
+						br
+						| приложения
+					+e.btns
+						+footerBtn(1)
+						+footerBtn(2)
+						+footerBtn(3)
+					+e.hand.d-none.d-xl-block
+						img.lazy(src='#' data-src="img/@2x/foot-hand.png" alt="")
+			+e.menu
+				+mnu()
+
+mixin footerBtn(imgNum)
+	+e.btn(href='#')
+		img.lazy(src="#" data-src=`img/@2x/foot-btn-${imgNum}.png` alt="")
+
+mixin footerItem(imgNum, title, txt)
+	+b.header-item
+		+e.content
+			+e.title=title
+			+e.txt=txt
+			block

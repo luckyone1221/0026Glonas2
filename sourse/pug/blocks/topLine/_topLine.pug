@@ -1,28 +1,42 @@
 mixin topLine(i='img/@2x/logo.png')
 	// start topLine
 	+b.topLine
-		.container
-			.row
-				.col-md-auto.col-sm
+		+e.container.container
+			+e.row.row
+				+e.logo-col.col-md-auto.col
 					+e.logo(href='/')
-						img.res-i(src= i , alt="")
-				.col-auto.h6 
-					.strong.text-primary  ЛИЦЕНЗИЯ 
-					| №141602 РОСКОМНАДЗОР
-
-				.col-md.h6 
-					div #[strong.text-primary Время работы:]  Пн-Вс с 09-00 до 21-00
-					div #[strong.text-primary e-mail:] #[a.text-secondary(href="mailto:info@mssglonass.ru") info@mssglonass.ru]
-				.col-auto.h6.mb-0.strong
-					div
-						a(href="tel:8(495)6403978") 8 (495) 640 39 78  
-						span Москва 
-					div
-						a(href="tel:8(812)6470668") 8 (812) 647 06 68 
-
-						span СПБ
-					div
-						a(href="tel:8(800)5553079") 8 (800) 555 30 79
-						span  Многоканальный
-
+						img.res-i(src=i , alt="")
+				+headerItem(1, 'ЛИЦЕНЗИЯ', '№141602 РОСКОМНАДЗОР')(class='d-none d-xl-block')
+				+headerItem(2, 'Москва', 'Пн-Вс с 09-00 до 21-00')(class='d-none d-xl-block')
+					+e.link(href="tel:+74956403978") +7 (495) 640-39-78
+				+headerItem(2, 'санкт петербург', 'Пн-Вс с 09-00 до 21-00')(class='d-none d-xl-block')
+					+e.link(href="tel:+78126470668") +7 (812) 647-06-68
+				+headerItem(3, 'бесплатно по россии', 'Многоканальный')(class='d-none d-xl-block')
+					+e.link(href="tel:88005553079") 8 (800) 555-30-79
+					+e.link.small(href="mailto:info@mssglonass.ru") info@mssglonass.ru
+				+e.burger.burger-js(class='d-xl-none')
+					span
+	+b.menu-c--js
+		+e.container.container
+			+e.menu
+				+mnu()
+				+e.items
+					+headerItem(1, 'ЛИЦЕНЗИЯ', '№141602 РОСКОМНАДЗОР')(class='d-xl-none')
+					+headerItem(2, 'Москва', 'Пн-Вс с 09-00 до 21-00')(class='d-xl-none')
+						+e.link(href="tel:+74956403978") +7 (495) 640-39-78
+					+headerItem(2, 'санкт петербург', 'Пн-Вс с 09-00 до 21-00')(class='d-xl-none')
+						+e.link(href="tel:+78126470668") +7 (812) 647-06-68
+					+headerItem(3, 'бесплатно по россии', 'Многоканальный')(class='d-xl-none')
+						+e.link(href="tel:88005553079") 8 (800) 555-30-79
+						+e.link.small(href="mailto:info@mssglonass.ru") info@mssglonass.ru
 	// end topLine
+
+mixin headerItem(imgNum, title, txt)
+	+e.col.col-auto&attributes(attributes)
+		+b.header-item
+			+e.img
+				img(src=`img/@2x/header-icon-${imgNum}.png` alt="")
+			+e.content
+				+e.title=title
+				+e.txt=txt
+				block
